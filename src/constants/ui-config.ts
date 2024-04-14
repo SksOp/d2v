@@ -51,9 +51,12 @@ const PARTYINFO: ValueRelatedType<{ color: string; name: string }> = {
   },
 };
 
+const asset_url =
+  "https://assets.graphic-portal.com/spaces/-Ns4Y6W9ApHcBTBEzu9S/graphics/-NsNham4iKudej0xLINo/versions/-NsNhi7ANB5ZktQHydB2/main";
+
 export const UICONFIG = {
   headline: "Sonntagsfragen zur Bundestagswahl",
-  headlineIcon: "{assetsUrl}/bundestag.png",
+  headlineIcon: `${asset_url}/bundestag.png`,
   monthNamesLong: [
     "Januar",
     "Februar",
@@ -86,4 +89,6 @@ export const UICONFIG = {
     partyInfo: { ...PARTYINFO },
     surveyInstitutes: { ...SURVEYINSTITUTES },
   },
+  footerline: "Infratest dimap, Forsa, Forschungsgruppe Wahlen, Kantar, Insa",
+  footerlineIcon: `${asset_url}/logo.svg`,
 };
