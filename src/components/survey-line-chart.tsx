@@ -1,19 +1,24 @@
+import { ApexOptions } from "apexcharts";
 import Chart from "react-apexcharts";
 
-type Series = {
-  name: string;
-  data: number[];
-  color: string;
-};
-
 interface SurveyLineChartProps {
-  options: ApexCharts.ApexOptions;
-  series: Series[];
+  options: ApexOptions;
+  series: ApexAxisChartSeries;
 }
 export function SurveyLineChart(props: SurveyLineChartProps) {
+  console.log(props.series);
   return (
     <Chart
-      options={props.options}
+      options={{
+        xaxis: {
+          type: "datetime",
+        },
+        yaxis: {
+          min: 0,
+          max: 45,
+        },
+        ...props.options,
+      }}
       series={props.series}
       type="line"
       width="100%"
