@@ -22,6 +22,7 @@ export function SurveyLineChart(props: SurveyLineChartProps) {
       series={props.series}
       type="line"
       width="100%"
+      height="500"
     />
   );
 }

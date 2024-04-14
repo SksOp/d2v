@@ -16,16 +16,18 @@ import { SurveyLineChart } from "../components/survey-line-chart";
 
 export function SurveySections() {
   const durations = DURATIONFILTER.map((d) => d.value);
+
   const [period, setPeriod] = useState(durations[0]);
+
   const [surveyinstitute, setSurveyinstitute] = useState<
     "institute" | SurveyInstituesName
   >("institute");
+
   const { toogleValueDisplay, visibleValues, chart } = useSurveyChart(
     DATA,
     surveyinstitute,
-    durations[0]
+    period
   );
-  console.log(surveyinstitute);
   return (
     <Stack gap={1.2} p={1.3} py={5.2}>
       <Selector

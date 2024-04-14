@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-// disabling the eslint rule while developing the hook
-
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { DurationFilter } from "../constants/ui-config";
 import { Data, SurveyInstituesName, ValuesName } from "../types/survey";
@@ -28,7 +25,14 @@ export function useSurveyChart(
   const [chart, setChart] = useState<ApexAxisChartSeries>();
 
   useEffect(() => {
-    setChart(transformToDataPoints(data, visibleValues, selectedInstitute));
+    setChart(
+      transformToDataPoints(
+        data,
+        visibleValues,
+        selectedInstitute,
+        selectedPeriod
+      )
+    );
   }, [data, selectedInstitute, selectedPeriod, visibleValues]);
   return {
     toogleValueDisplay,
