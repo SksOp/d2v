@@ -1,9 +1,13 @@
 import { Layout } from "../layout";
+import { SurveySections } from "../sections/survey-sections";
 
 function App() {
   return (
     <>
-      <Layout>Hello</Layout>;
+      <Layout>
+        <SurveySections />
+      </Layout>
+      ;
     </>
   );
 }

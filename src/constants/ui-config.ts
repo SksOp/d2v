@@ -1,6 +1,46 @@
-import { SurveyInstitues, ValueRelatedType } from "../types/survey";
+import {
+  SurveyInstitues,
+  SurveyInstituesName,
+  ValueRelatedType,
+} from "../types/survey";
 
-const SURVEYINSTITUTES: SurveyInstitues = {
+export type DurationFilter = {
+  title: string;
+  value: "last12Months" | "since2020" | "2021" | "2022" | "2023";
+};
+
+export const ALLSURVEYINSTITUTES: SurveyInstituesName[] = [
+  "forsa",
+  "insa",
+  "fgw",
+  "infra",
+  "kantar",
+] as const;
+
+export const DURATIONFILTER: DurationFilter[] = [
+  {
+    title: "Seit 2020",
+    value: "since2020",
+  },
+  {
+    title: "letzte 12 Monate",
+    value: "last12Months",
+  },
+  {
+    title: "2021",
+    value: "2021",
+  },
+  {
+    title: "2022",
+    value: "2022",
+  },
+  {
+    title: "2023",
+    value: "2023",
+  },
+] as const;
+
+export const SURVEYINSTITUTES: SurveyInstitues = {
   fgw: {
     info: "FG Wahlen / ZDF",
     title: "Forschungsgruppe Wahlen",

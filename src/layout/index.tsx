@@ -20,7 +20,13 @@ export function Layout({
       }}
     >
       <Navbar />
-      <Box component={"main"} sx={sx}>
+      <Box
+        component={"main"}
+        sx={{
+          width: "100%",
+          ...sx,
+        }}
+      >
         {children}
       </Box>
       <Footer />
